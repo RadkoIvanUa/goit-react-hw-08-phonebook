@@ -1,12 +1,20 @@
-import { Button } from '@mui/material';
+import { Button, Menu, MenuItem } from '@mui/material';
 import { AuthNavContainer, StyledLink } from './StyldedAuthNav';
 
-import { Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react';
+// import { Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react';
 import { MdMenu } from 'react-icons/md';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function AuthNav() {
   const [screenWidth, setScreenWidth] = useState({ width: window.innerWidth });
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const detectedSize = () => {
     setScreenWidth({
@@ -23,22 +31,31 @@ export default function AuthNav() {
 
   return screenWidth.width < 470 ? (
     <AuthNavContainer>
-      <Menu>
-        <MenuButton as={Button}>
-          <MdMenu size={30} color="white" />
-        </MenuButton>
-        <MenuList>
-          <MenuItem style={{ textAlign: 'center' }}>
-            <StyledLink style={{ fontSize: 20 }} to="/login">
-              Login
-            </StyledLink>
-          </MenuItem>
-          <MenuItem>
-            <StyledLink style={{ fontSize: 20 }} to="/registration">
-              Registration
-            </StyledLink>
-          </MenuItem>
-        </MenuList>
+      <Button
+        id="basic-button"
+        aria-controls={open ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+      >
+        <MdMenu size={30} color="white" />
+      </Button>
+
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <MenuItem onClick={handleClose}>
+          <StyledLink to="/login">Login</StyledLink>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <StyledLink to="/registration">Registration</StyledLink>
+        </MenuItem>
       </Menu>
     </AuthNavContainer>
   ) : (
