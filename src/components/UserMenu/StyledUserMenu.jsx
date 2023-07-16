@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledUserMenuContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   div {
     display: flex;
     align-items: center;

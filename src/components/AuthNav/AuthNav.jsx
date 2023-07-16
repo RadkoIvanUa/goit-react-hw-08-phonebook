@@ -21,7 +21,7 @@ export default function AuthNav() {
     };
   }, [screenWidth]);
 
-  return screenWidth.width < 450 ? (
+  return screenWidth.width < 470 ? (
     <AuthNavContainer>
       <Menu>
         <MenuButton as={Button}>

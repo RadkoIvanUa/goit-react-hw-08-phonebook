@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from 'redux/operations';
 import { selectUser } from 'redux/selectors';
 import { RiLogoutBoxRLine } from 'react-icons/ri';
-import { StyledLink, StyledUserMenuContainer } from './StyledUserMenu';
+import { StyledUserMenuContainer } from './StyledUserMenu';
 
 export default function UserMenu() {
   const { name } = useSelector(selectUser);
@@ -15,9 +15,9 @@ export default function UserMenu() {
 
   return (
     <StyledUserMenuContainer>
-      <StyledLink to="/contacts">PhoneBook</StyledLink>
+      {/* <StyledLink to="/contacts">PhoneBook</StyledLink> */}
       <div>
-        <p>{name.toUpperCase()}</p>
+        <p>Welcome {name.toUpperCase()}!</p>
         <IconButton
           variant="contained"
           style={{

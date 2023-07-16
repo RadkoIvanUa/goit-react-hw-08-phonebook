@@ -13,5 +13,5 @@ export const StyledLink = styled(NavLink)`
 export const AuthNavContainer = styled.div`
   display: flex;
   gap: 20px;
-  justify-content: flex-end;
+  justify-content: center;
 `;
