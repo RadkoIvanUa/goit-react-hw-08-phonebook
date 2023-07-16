@@ -10,8 +10,7 @@ export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   width: 250px;
-  gap: 10px;
-  // border: 1px solid grey;
+  gap: 15px;
   border-radius: 10px;
   padding: 20px;
   margin: 0 auto;

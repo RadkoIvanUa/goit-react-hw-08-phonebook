@@ -21,7 +21,7 @@ export default function Filter() {
         size="small"
         id="outlined-basic"
         label={<MdPersonSearch />}
-        placeholder="Input name for search"
+        placeholder="Name for search"
         variant="outlined"
         type="text"
         onChange={handleChange}
