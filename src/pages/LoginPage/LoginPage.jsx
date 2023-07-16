@@ -1,4 +1,4 @@
-import { Button, IconButton, InputAdornment, TextField } from '@mui/material';
+import { Button, IconButton, TextField } from '@mui/material';
 import { Container, FormContainer } from 'components/StyledContainer';
 import { useState } from 'react';
 import { MdVisibility, MdVisibilityOff } from 'react-icons/md';
