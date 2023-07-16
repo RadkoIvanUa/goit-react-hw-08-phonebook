@@ -7,6 +7,7 @@ export const StyledLink = styled(NavLink)`
   padding: 10px;
   &.active {
     color: #1976d2;
+    font-weight: 700;
   }
 `;
 

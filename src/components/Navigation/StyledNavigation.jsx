@@ -5,5 +5,4 @@ export const StyledAppBar = {
   alignItems: 'center',
   flexDirection: 'row',
   justifyContent: 'space-between',
-  gap: 40,
 };

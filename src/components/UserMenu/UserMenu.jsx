@@ -17,7 +17,7 @@ export default function UserMenu() {
     <StyledUserMenuContainer>
       {/* <StyledLink to="/contacts">PhoneBook</StyledLink> */}
       <div>
-        <p>Welcome {name.toUpperCase()}!</p>
+        <p style={{ fontWeight: 700 }}>Welcome {name.toUpperCase()}!</p>
         <IconButton
           variant="contained"
           style={{

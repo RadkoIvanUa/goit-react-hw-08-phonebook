@@ -13,7 +13,7 @@ export default function Navigation() {
     <AppBar position="fixed" style={StyledAppBar}>
       <div style={{ display: 'flex' }}>
         <RiBook3Line size={50} />
-        <p>PhoneBook</p>
+        <p style={{ fontWeight: 700 }}>PhoneBook</p>
       </div>
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </AppBar>
