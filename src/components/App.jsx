@@ -9,10 +9,10 @@ import { useEffect } from 'react';
 import { refresh } from 'redux/operations';
 import RestrictedRoute from './RestrictedRoute';
 import PrivateRout from './PrivateRout';
-import { ProgressBar, ThreeDots } from 'react-loader-spinner';
+import { ThreeDots } from 'react-loader-spinner';
 
 export function App() {
-  const isRefreshing = useSelector(selectIsRefreshing);
+  const isRefreshing = useSelector(selectIsRefreshing); 
 
   const dispatch = useDispatch();
 
