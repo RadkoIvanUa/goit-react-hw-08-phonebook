@@ -37,6 +37,7 @@ export default function RegisterPage() {
           variant="outlined"
           name="name"
           type="text"
+          required
         />
         <TextField
           size="small"
@@ -45,6 +46,7 @@ export default function RegisterPage() {
           variant="outlined"
           name="email"
           type="email"
+          required
         />
         <TextField
           size="small"
@@ -52,6 +54,7 @@ export default function RegisterPage() {
           label="Password"
           variant="outlined"
           name="password"
+          required
           type={showPassword ? 'text' : 'password'}
           InputProps={{
             endAdornment: (

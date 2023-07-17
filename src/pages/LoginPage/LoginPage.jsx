@@ -35,6 +35,7 @@ export default function LoginPage() {
           variant="outlined"
           name="email"
           type="email"
+          required
         />
 
         <TextField
@@ -43,6 +44,7 @@ export default function LoginPage() {
           label="Password"
           variant="outlined"
           name="password"
+          required
           type={showPassword ? 'text' : 'password'}
           InputProps={{
             endAdornment: (
