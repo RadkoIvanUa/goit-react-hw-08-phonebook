@@ -5,16 +5,17 @@ import { useSelector } from 'react-redux';
 import { selectIsLoggedIn } from 'redux/selectors';
 import { StyledAppBar } from './StyledNavigation';
 import { RiBook3Line } from 'react-icons/ri';
+import { StyledLink } from 'components/UserMenu/StyledUserMenu';
 
 export default function Navigation() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
     <AppBar position="fixed" style={StyledAppBar}>
-      <div style={{ display: 'flex' }}>
-        <RiBook3Line size={50} />
-        <p style={{ fontWeight: 700 }}>PhoneBook</p>
-      </div>
+      <StyledLink to="/" style={{ display: 'flex', alignItems: 'center' }}>
+        <RiBook3Line size={50} color="white" />
+        <p>PhoneBook</p>
+      </StyledLink>
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </AppBar>
   );

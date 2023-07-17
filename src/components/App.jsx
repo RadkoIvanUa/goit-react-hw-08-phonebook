@@ -10,9 +10,10 @@ import { refresh } from 'redux/operations';
 import RestrictedRoute from './RestrictedRoute';
 import PrivateRout from './PrivateRout';
 import { ThreeDots } from 'react-loader-spinner';
+import NotFound from 'pages/NotFounPage/NotFound';
 
 export function App() {
-  const isRefreshing = useSelector(selectIsRefreshing); 
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   const dispatch = useDispatch();
 
@@ -63,6 +64,7 @@ export function App() {
             <PrivateRout component={<ContactsPage />} redirectTo="/login" />
           }
         />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

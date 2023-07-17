@@ -1,7 +1,5 @@
 import { Button, Menu, MenuItem } from '@mui/material';
 import { AuthNavContainer, StyledLink } from './StyldedAuthNav';
-
-// import { Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react';
 import { MdMenu } from 'react-icons/md';
 import React, { useEffect, useState } from 'react';
 
@@ -29,7 +27,7 @@ export default function AuthNav() {
     };
   }, [screenWidth]);
 
-  return screenWidth.width < 470 ? (
+  return screenWidth.width <= 480 ? (
     <AuthNavContainer>
       <Button
         id="basic-button"
@@ -63,12 +61,12 @@ export default function AuthNav() {
       <Button
         children={<StyledLink to="/login">Login</StyledLink>}
         variant="contained"
-        style={{ backgroundColor: 'white', color: 'black', height: 30 }}
+        style={{ backgroundColor: 'white', color: 'black', height: 35 }}
       />
       <Button
         children={<StyledLink to="/registration">Registration</StyledLink>}
         variant="contained"
-        style={{ backgroundColor: 'white', color: 'black', height: 30 }}
+        style={{ backgroundColor: 'white', color: 'black', height: 35 }}
       />
     </AuthNavContainer>
   );

@@ -15,10 +15,11 @@ export const StyledUserMenuContainer = styled.div`
 `;
 
 export const StyledLink = styled(NavLink)`
-  color: black;
+  color: white;
   text-decoration: none;
-  &.active {
-    color: white;
-    font-weight: 700;
+  font-weight: 700;
+  font-size: 22px;
+  p {
+    margin: 0;
   }
 `;

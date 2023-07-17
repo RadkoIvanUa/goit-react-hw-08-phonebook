@@ -4,8 +4,24 @@ import { logOut } from 'redux/operations';
 import { selectUser } from 'redux/selectors';
 import { RiLogoutBoxRLine } from 'react-icons/ri';
 import { StyledUserMenuContainer } from './StyledUserMenu';
+import { useEffect, useState } from 'react';
 
 export default function UserMenu() {
+  const [screenWidth, setScreenWidth] = useState({ width: window.innerWidth });
+
+  const detectedSize = () => {
+    setScreenWidth({
+      width: window.innerWidth,
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', detectedSize);
+    return () => {
+      window.removeEventListener('resize', detectedSize);
+    };
+  }, [screenWidth]);
+
   const { name } = useSelector(selectUser);
 
   const dispatch = useDispatch();
@@ -15,16 +31,17 @@ export default function UserMenu() {
 
   return (
     <StyledUserMenuContainer>
-      {/* <StyledLink to="/contacts">PhoneBook</StyledLink> */}
       <div>
-        <p style={{ fontWeight: 700 }}>Welcome {name.toUpperCase()}!</p>
+        {screenWidth.width > 390 && (
+          <p style={{ fontWeight: 700 }}>Welcome {name.toUpperCase()}!</p>
+        )}
+
         <IconButton
           variant="contained"
           style={{
             backgroundColor: 'white',
             color: 'black',
           }}
-          size="small"
           onClick={handleLogOut}
         >
           <RiLogoutBoxRLine />
